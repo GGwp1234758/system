@@ -1,0 +1,8 @@
+.label-font{
+    font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    font-weight: bold;
+}
+.divide-line{
+    margin-top: -1px ;
+    margin-bottom: -1px
+}
