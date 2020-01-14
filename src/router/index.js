@@ -1,20 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'test',
-    component: () => import(/* webpackChunkName: "about" */ 'components/common/NavBar-side'),
+import container from 'components/container'
+import Navbar from 'components/common/NavBar-side'
+import TS from  'views/forms/textureAnalysis'
+import DCD from  'views/forms/DifferentialChangeDetection'
 
-  },
+
+
+
+const routes = [
+    {
+        path: '/',
+        components: {
+            Navbar,
+            container,
+            TS,
+            DCD
+        }
+    },
 
 ]
 
 const router = new VueRouter({
-  routes,
-  mode: 'history'
+    routes,
+    mode: 'history'
 })
 
 export default router

@@ -16,7 +16,6 @@
 </template>
     <script>
         import innerNav from 'views/innerNav'
-        import customFiltering from 'views/forms/customFiltering'
 
 
 
@@ -37,7 +36,7 @@
             },
             components: {
                 innerNav,
-                customFiltering,
+                customFiltering : () => import('views/forms/customFiltering')
             }
         };
     </script>

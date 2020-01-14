@@ -1,8 +1,18 @@
-.label-font{
-    font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+.label-font {
+    font: 12px/1.5 Tahoma, Helvetica, Arial, '宋体', sans-serif;
     font-weight: bold;
 }
-.divide-line{
-    margin-top: -1px ;
+
+.divide-line {
+    margin-top: -1px;
     margin-bottom: -1px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.boderFix{
+    margin-bottom: -10px;
+    margin-top: -10px;
 }
