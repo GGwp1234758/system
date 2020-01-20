@@ -115,7 +115,7 @@
         name: "DifferentialChangeDetection",
         data() {
             return {
-                toolID: 31,
+                toolID: 32,
                 showTool: true,
                 id: 'DifferentialChangeDetection',
                 dialogVisible: true

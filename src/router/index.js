@@ -5,10 +5,11 @@ Vue.use(VueRouter)
 
 import container from 'components/container'
 import Navbar from 'components/common/NavBar-side'
-import TS from  'views/forms/textureAnalysis'
-import DCD from  'views/forms/DifferentialChangeDetection'
 
-
+import cme from 'views/forms/CompositeModelEnhancements'
+import ic from 'views/forms/imageCutting'
+import cdt from 'views/forms/ChangeDetectionTool'
+import ard from 'views/forms/AnalysisRoadDamage'
 
 
 const routes = [
@@ -17,9 +18,27 @@ const routes = [
         components: {
             Navbar,
             container,
-            TS,
-            DCD
-        }
+           ic,cme,cdt,
+            ard
+
+        },
+        children: [{
+            path: '/profile',
+            name: 'profile',
+            components: {
+                profile: resolve => {
+                    require(['components/content/profile'], resolve)
+                },
+            }
+        },
+            /*{
+                path: '/test',
+                components: {
+                    test: resolve => {
+                        require(['views/forms/customFiltering'], resolve)
+                    }
+                }
+            }*/]
     },
 
 ]

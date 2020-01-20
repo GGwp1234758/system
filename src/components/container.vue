@@ -1,16 +1,31 @@
 <template>
     <el-container>
         <el-aside></el-aside>
-        <el-main>Main
-
+        <el-main>
+            <router-view :name="this.$route.path.slice(1)"></router-view>
         </el-main>
         <el-footer></el-footer>
     </el-container>
 </template>
 
 <script>
+
+
     export default {
-        name: "container"
+        name: "container",
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+            pathChange(){
+            }
+
+        },
+
+
+
     }
 </script>
 
@@ -27,9 +42,8 @@
 
     .el-main {
         position: absolute;
-        background: #ffffff;
         left: 365px;
         top: 0;
-
+        height: 100%;
     }
 </style>
