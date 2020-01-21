@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <div v-show=showTool>
+    <div>
         <el-dialog
                 top="9vh"
                 :modal-append-to-body='false'
@@ -115,22 +115,16 @@
         name: "DifferentialChangeDetection",
         data() {
             return {
-                toolID: 32,
-                showTool: true,
                 id: 'DifferentialChangeDetection',
                 dialogVisible: true
             }
         },
         methods: {
-            getToolIndex(data) {
-                if (this.id === data) {
-                    showTool = !showTool;
-                }
-            },
             handleClose(done) {
                 this.$confirm('确认关闭？')
                     .then(_ => {
                         done();
+                        this.$store.state.showTool = false
                     })
                     .catch(_ => {
                     });

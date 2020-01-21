@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <div v-if=showTool>
+    <div>
         <el-form action="">
             <el-dialog
                     top="15vh"
@@ -77,7 +77,7 @@
                         <label>原影像类型</label>
                         <el-input size="mini" value=""></el-input>
                     </el-col>
-                    <el-col :span="12" >
+                    <el-col :span="12">
                         <label>结果类型</label>
                         <br/>
                         <el-select size="mini">
@@ -138,24 +138,18 @@
         name: "customFiltering",
         data() {
             return {
-                toolID: 31,
-                showTool: false,
                 id: 'customFiltering',
                 dialogVisible: true,
             }
         },
         methods: {
-            getToolIndex(data) {
 
-                if (this.id === data) {
-                    showTool = !showTool;
-                }
-            },
             handleClose(done) {
                 this.$confirm('确认关闭？')
                     .then(_ => {
                         done();
-                        this.showTool = false;
+                        this.$store.state.showTool = false
+
                     })
                     .catch(_ => {
                     });

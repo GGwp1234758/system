@@ -6,11 +6,6 @@ Vue.use(VueRouter)
 import container from 'components/container'
 import Navbar from 'components/common/NavBar-side'
 
-import cme from 'views/forms/CompositeModelEnhancements'
-import ic from 'views/forms/imageCutting'
-import cdt from 'views/forms/ChangeDetectionTool'
-import ard from 'views/forms/AnalysisRoadDamage'
-
 
 const routes = [
     {
@@ -18,8 +13,7 @@ const routes = [
         components: {
             Navbar,
             container,
-           ic,cme,cdt,
-            ard
+
 
         },
         children: [{

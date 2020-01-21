@@ -4,13 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    toolID: ''
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    state: {
+        showTool: false
+    },
+    mutations: {},
+    actions: {},
+    modules: {}
 })

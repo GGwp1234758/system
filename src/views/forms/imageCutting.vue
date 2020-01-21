@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <div v-show="showTool">
+    <div>
         <el-dialog
                 top="8vh"
                 :modal-append-to-body="false"
@@ -40,14 +40,14 @@
                     <el-row :gutter="40">
                         <el-col :span="12">
                             <el-form-item label="裁剪模式:" style="margin-bottom: 0">
-                                <el-select v-model="value" placeholder="请选择" size="mini" style="width: 192px">
+                                <el-select placeholder="请选择" size="mini" style="width: 192px">
                                     <el-option>用户输入坐标</el-option>
                                 </el-select>
                             </el-form-item>
                         </el-col>
                         <el-col :span="12">
                             <el-form-item label="坐标类型:" style="margin-bottom: 0">
-                                <el-select v-model="value" placeholder="请选择" size="mini" style="width: 165px">
+                                <el-select placeholder="请选择" size="mini" style="width: 165px">
                                     <el-option>栅格范围</el-option>
                                 </el-select>
                             </el-form-item>
@@ -92,7 +92,7 @@
 
                 <div class="image">
                     <div class="demo-image">
-                        <el-image class="el-im" :src="url" :fit="fit"></el-image>
+                        <el-image class="el-im" :src="url"></el-image>
                     </div>
                     <div class="btn-image">
                         <el-row>
@@ -117,21 +117,19 @@
                             <el-col :offset="20" style="margin-bottom: 35px">
                                 <el-button size="mini" circle>下</el-button>
                             </el-col>
-
-
                             <el-col :offset="19" style="margin-bottom: 5px;margin-top: -20px">
                                 <el-button size="mini">导入AOI区</el-button>
                             </el-col>
                             <el-col :offset="19" style="margin-bottom: 15px">
                                 <el-button size="mini">简单要素区</el-button>
                             </el-col>
-                            <el-col :offset="20" style="margin-bottom: 5px">
+                            <el-col :offset="19" style="margin-bottom: 5px">
                                 <el-button size="mini">确定</el-button>
                             </el-col>
-                            <el-col :offset="20" style="margin-bottom: 5px">
+                            <el-col :offset="19" style="margin-bottom: 5px">
                                 <el-button size="mini">应用</el-button>
                             </el-col>
-                            <el-col :offset="20" style="margin-bottom: 5px">
+                            <el-col :offset="19" style="margin-bottom: 5px">
                                 <el-button size="mini">关闭</el-button>
                             </el-col>
                         </el-row>
@@ -148,23 +146,18 @@
         name: "imageCutting",
         data() {
             return {
-                toolID: 31,
-                showTool: true,
                 id: "imageCutting",
-                dialogVisible: true,
-                url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
+                url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+                dialogVisible: true
             };
         },
         methods: {
-            getToolIndex(data) {
-                if (this.id === data) {
-                    showTool = !showTool;
-                }
-            },
+
             handleClose(done) {
                 this.$confirm("确认关闭？")
                     .then(_ => {
                         done();
+                        this.$store.state.showTool = false
                     })
                     .catch(_ => {
                     });

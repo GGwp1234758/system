@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <div v-if=showTool>
+    <div>
         <el-form>
             <el-dialog
                     top="5vh"
@@ -86,7 +86,9 @@
                         <div class="image">
                             <el-image :src="url"></el-image>
                         </div>
-                        <el-col :offset="17"><el-button size="mini">执行分析</el-button></el-col>
+                        <el-col :offset="17">
+                            <el-button size="mini">执行分析</el-button>
+                        </el-col>
 
                     </el-col>
                 </el-row>
@@ -118,6 +120,7 @@
                 this.$confirm('确认关闭？')
                     .then(_ => {
                         done();
+                        this.$store.state.showTool = false
                     })
                     .catch(_ => {
                     });
@@ -141,7 +144,6 @@
         margin-bottom: 10px;
         padding: 4px;
         border: 0.2px #f2f2f2 solid;
-
     }
 
     .el-select {

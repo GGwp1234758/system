@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <div v-show="showTool">
+    <div>
         <el-form>
             <el-dialog
                     top="9vh"
@@ -56,7 +56,7 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
-                            <el-form-item label="方向:" size="mini" >
+                            <el-form-item label="方向:" size="mini">
                                 <el-input style="width: 120px"></el-input>
                             </el-form-item>
                         </el-col>
@@ -107,6 +107,7 @@
                 this.$confirm("确认关闭？")
                     .then(_ => {
                         done();
+                        this.$store.state.showTool = false
                     })
                     .catch(_ => {
                     });

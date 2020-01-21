@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <div v-if=showTool>
+    <div>
         <el-form>
             <el-dialog
                     top="5vh"
@@ -65,14 +65,15 @@
                                                         show-input
                                                         style="width: 270px">
                                                 </el-slider>
-                                               最小值
+                                                最小值
                                                 <el-slider
                                                         show-input
-                                                style="width: 270px">
+                                                        style="width: 270px">
                                                 </el-slider>
                                                 <el-button type="primary" round>预览</el-button>
                                             </el-form-item>
-                                            <el-form-item label="3、目标判读调整" class="boderFix" style="margin-bottom: -15px">
+                                            <el-form-item label="3、目标判读调整" class="boderFix"
+                                                          style="margin-bottom: -15px">
                                                 <el-button type="primary" size="small" round>运行</el-button>
                                             </el-form-item>
                                         </el-col>
@@ -115,6 +116,7 @@
                 this.$confirm('确认关闭？')
                     .then(_ => {
                         done();
+                        this.$store.state.showTool = false
                     })
                     .catch(_ => {
                     });
@@ -139,7 +141,8 @@
         overflow-x: hidden;
         border-bottom: #dcdfe6 0.5px solid;
     }
-    .judge{
+
+    .judge {
 
     }
 </style>

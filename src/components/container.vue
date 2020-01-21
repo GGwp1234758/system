@@ -14,16 +14,13 @@
     export default {
         name: "container",
         data() {
-            return {
-
-            }
+            return {}
         },
         methods: {
-            pathChange(){
+            pathChange() {
             }
 
         },
-
 
 
     }

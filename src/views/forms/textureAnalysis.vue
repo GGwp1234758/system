@@ -1,5 +1,5 @@
 <template xmlns:el-col="http://www.w3.org/1999/html">
-    <el-form v-show=showTool>
+    <el-form>
         <el-dialog
                 :modal="false"
                 top="5vh"
@@ -162,22 +162,17 @@
         name: "textureSetting",
         data() {
             return {
-                toolID: 33,
-                showTool: true,
                 id: 'textureSetting',
                 dialogVisible: true
             }
         },
         methods: {
-            getToolIndex(data) {
-                if (this.id === data) {
-                    showTool = !showTool;
-                }
-            },
+
             handleClose(done) {
                 this.$confirm('确认关闭？')
                     .then(_ => {
                         done();
+                        this.$store.state.showTool = false
                     })
                     .catch(_ => {
                     });
